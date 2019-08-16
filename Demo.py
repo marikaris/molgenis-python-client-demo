@@ -447,9 +447,9 @@ def main():
 
     execute = Execute().do_execute()
     if execute:
-        patient_in_db = demo.get_with_query('root_hospital_employees', 'firstName=="Gregory";lastName=="House"')[0][
+        employee_in_db = demo.get_with_query('root_hospital_employees', 'firstName=="Gregory";lastName=="House"')[0][
             'id']
-        demo.molgenis_client.delete_list('root_hospital_employees', [patient_in_db])
+        demo.molgenis_client.delete_list('root_hospital_employees', [employee_in_db])
         print('simulation.get_doctors_description()')
         simulation.get_doctors_description()
         cprint("\t# He's gone!", 'blue')
